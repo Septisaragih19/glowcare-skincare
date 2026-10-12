@@ -2,19 +2,11 @@
     "version": 2,
     "framework": null,
     "outputDirectory": "public",
-    "builds": [
-        {
-            "src": "api/index.php",
-            "use": "vercel-php@0.6.0",
-            "config": {
-                "nodeVersion": "20.x"
-            }
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.6.0"
         }
-    ],
+    },
     "routes": [
         {
             "src": "/build/(.*)",
