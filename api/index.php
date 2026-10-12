@@ -1,10 +1,6 @@
 <?php
 
-// Arahkan storage & logs ke /tmp Vercel
-$_ENV['APP_STORAGE_PATH'] = '/tmp/storage';
-$_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
-$_ENV['LOG_CHANNEL'] = 'stderr';
-
+// Buat direktori sementara di /tmp jika belum ada
 $dirs = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/data',

@@ -12,10 +12,11 @@ $app = new Illuminate\Foundation\Application(
 
 /*
 |--------------------------------------------------------------------------
-| Override Cache Path for Vercel Serverless
+| Override Storage & Cache Paths for Vercel Serverless
 |--------------------------------------------------------------------------
 */
 $app->useBootstrapPath('/tmp/bootstrap');
+$app->useStoragePath('/tmp/storage');
 
 /*
 |--------------------------------------------------------------------------
