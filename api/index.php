@@ -1,8 +1,9 @@
 <?php
 
-// Arahkan folder storage dan cache ke /tmp agar tidak read-only di Vercel
+// Paksa Laravel menggunakan direktori /tmp yang writable di Vercel
 $_ENV['APP_STORAGE_PATH'] = '/tmp/storage';
 $_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
+$_ENV['LOG_CHANNEL'] = 'stderr';
 
 $storageDirs = [
     '/tmp/storage/framework/views',
@@ -15,7 +16,7 @@ $storageDirs = [
 
 foreach ($storageDirs as $dir) {
     if (!is_dir($dir)) {
-        mkdir($dir, 0755, true);
+        @mkdir($dir, 0755, true);
     }
 }
 
