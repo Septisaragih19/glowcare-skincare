@@ -1,11 +1,11 @@
 <?php
 
-// Paksa Laravel menggunakan direktori /tmp yang writable di Vercel
+// Arahkan storage & logs ke /tmp Vercel
 $_ENV['APP_STORAGE_PATH'] = '/tmp/storage';
 $_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
 $_ENV['LOG_CHANNEL'] = 'stderr';
 
-$storageDirs = [
+$dirs = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/data',
     '/tmp/storage/framework/sessions',
@@ -14,7 +14,7 @@ $storageDirs = [
     '/tmp/bootstrap/cache',
 ];
 
-foreach ($storageDirs as $dir) {
+foreach ($dirs as $dir) {
     if (!is_dir($dir)) {
         @mkdir($dir, 0755, true);
     }
